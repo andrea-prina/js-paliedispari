@@ -59,7 +59,7 @@ function randomIntegerNumber (min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const computerNum = randomIntegerNumber(1,5);
+const computerNum = randomIntegerNumber(1,6);
 
 
 // Sum them and check if the result is EVEN or ODD
