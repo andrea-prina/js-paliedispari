@@ -31,10 +31,12 @@ if (userInputWord === userReversedWord){
 // Ask the user if they want to choose EVEN or ODD
 let userEvenOddChoice;
 
-while (true){
+let oddEvenWhileDummy = true;
+
+while (oddEvenWhileDummy === true){
     userEvenOddChoice = prompt("PARI o DISPARI?").toLowerCase();
     if ((userEvenOddChoice === "pari") || (userEvenOddChoice === "dispari")){
-        break;
+        oddEvenWhileDummy = false;
     }
 }
 
@@ -42,10 +44,12 @@ while (true){
 // Ask the user to choose a number between 1 and 5
 let userNumChoice;
 
-while (true){
+let numberWhileDummy = true;
+
+while (numberWhileDummy){
     userNumChoice = parseInt(prompt("Inserisci un numero da 1 a 5"));
     if ((userNumChoice >= 1) && (userNumChoice <= 5)){
-        break; 
+        numberWhileDummy = false; 
     }
 }
 
