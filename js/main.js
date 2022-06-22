@@ -14,10 +14,10 @@ function reverseWord (inputWord){
     return outputWord;
 }
 
+
 const userReversedWord = reverseWord(userInputWord);
 
 // Check if the original word is the same of the reversed one
-
 if (userInputWord === userReversedWord){
     console.log(`La parola ${userInputWord} è palindroma`);
 } else {
@@ -32,3 +32,49 @@ if (userInputWord === userReversedWord){
 // ! Sommiamo i due numeri
 // ! Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // ! Dichiariamo chi ha vinto.
+
+// *** ESERCIZIO 2 - Pari o Dispari ***
+
+// Ask the user if they want to choose EVEN or ODD
+let userEvenOddChoice;
+
+while (true){
+    userEvenOddChoice = prompt("PARI o DISPARI?").toLowerCase();
+    if ((userEvenOddChoice === "pari") || (userEvenOddChoice === "dispari")){
+        break;
+    }
+}
+
+
+// Ask the user to choose a number between 1 and 5
+let userNumChoice;
+
+while (true){
+    userNumChoice = parseInt(prompt("Inserisci un numero da 1 a 5"));
+    if ((userNumChoice >= 1) && (userNumChoice <= 5)){
+        break; 
+    }
+}
+
+
+// Generate a random number between 1 and 5 for the computer
+function randomIntegerNumber (min, max){
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const computerNum = randomIntegerNumber(1,5);
+
+
+// Sum them and check if the result is EVEN or ODD
+function isEven (number) {
+    return (number % 2) === 0;
+}
+
+totalNumber = userNumChoice + computerNum;
+
+// Declare the winner
+if (((userEvenOddChoice === "pari") && (isEven(totalNumber) === true)) || ((userEvenOddChoice === "dispari") && (isEven(totalNumber) === false ))){
+    console.log(`La somma dei numeri da ${totalNumber}, il giocatore ha scelto "${userEvenOddChoice}" e quindi VINCE!!!`);
+} else {
+    console.log(`La somma dei numeri da ${totalNumber}, il giocatore ha scelto "${userEvenOddChoice}" e quindi PERDE...`);
+} 
